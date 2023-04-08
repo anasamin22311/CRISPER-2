@@ -1,0 +1,15 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <p>Your email address is @ViewBag.CurrentUser.Email</p>
+    <p>Welcome,@ViewBag.CurrentUser.UserName</p>
+    <p>Welcome,@ViewBag.CurrentUser.PhoneNumber</p>
+    <p>Welcome,@ViewBag.CurrentUser.Address</p>
+}
+else
+{
+    <p>Please sign in to view this page.</p>
+}
