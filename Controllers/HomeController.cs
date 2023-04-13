@@ -10,10 +10,10 @@ namespace CRISPER.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly UserManager<AppUser> _userManager;
+        private readonly UserManager<IdentityUser> _userManager;
         private readonly ApplicationDbContext _dbContext;
 
-        public HomeController(ILogger<HomeController> logger, UserManager<AppUser> userManager, ApplicationDbContext dbContext)
+        public HomeController(ILogger<HomeController> logger, UserManager<IdentityUser> userManager, ApplicationDbContext dbContext)
         {
             _dbContext= dbContext;
             _userManager = userManager;

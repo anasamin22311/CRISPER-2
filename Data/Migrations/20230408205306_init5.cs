@@ -10,7 +10,7 @@ namespace CRISPER.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "AppUser");
+                name: "IdentityUser");
 
             migrationBuilder.AddColumn<string>(
                 name: "FullName",
@@ -37,7 +37,7 @@ namespace CRISPER.Data.Migrations
                 table: "AspNetUsers");
 
             migrationBuilder.CreateTable(
-                name: "AppUser",
+                name: "IdentityUser",
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
@@ -59,7 +59,7 @@ namespace CRISPER.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_AppUser", x => x.Id);
+                    table.PrimaryKey("PK_IdentityUser", x => x.Id);
                 });
         }
     }

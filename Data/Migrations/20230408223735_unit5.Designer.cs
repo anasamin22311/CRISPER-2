@@ -232,7 +232,7 @@ namespace CRISPER.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("CRISPER.Models.AppUser", b =>
+            modelBuilder.Entity("CRISPER.Models.IdentityUser", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 

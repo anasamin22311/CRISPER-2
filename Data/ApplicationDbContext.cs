@@ -1,7 +1,9 @@
 ﻿using CRISPER.Models;
+using CRISPR.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Xml;
 
 namespace CRISPER.Data
 {
@@ -11,16 +13,23 @@ namespace CRISPER.Data
             : base(options)
         {
         }
-        public DbSet<CRISPER.Models.AppUser> users { get; set; }
-      
-  protected override void OnModelCreating(ModelBuilder modelBuilder)
+        public DbSet<IdentityUser>? users { get; set; }
+        public DbSet<DataSet>? DataSets { get; set; }
+  public DbSet<Model>? Model { get; set; }
+
+        
+            
+        
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<AppUser>()
+            modelBuilder.Entity<IdentityUser>()
                 .HasDiscriminator<string>("UserType")
-                .HasValue<AppUser>("User");
+                .HasValue<IdentityUser>("User");
         }
+      
     }
 
 }
